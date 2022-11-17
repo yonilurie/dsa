@@ -1,35 +1,18 @@
 // Array for testing
-let arr = [
-	1,
-	2,
-	3,
-	4,
-	5,
-	6,
-	7,
-	8,
-	9,
-	10,
-	11,
-	12,
-	13,
-	14,
-	15,
-	16,
-	17,
-	444,
-	777,
-	88777,
-	434434,
-];
+import { sorted as arr } from "./arrays";
 
 //Recursive solution
-function binarySearchRecursive(arr, target, left, right) {
+function binarySearchRecursive(
+	arr: number[],
+	target: number,
+	left: number,
+	right: number
+): number {
 	// If the left pointer is higher than the right pointer we have looked through the
 	// entire list and not found the target
 	if (left > right) return -1;
 	//Find the mid point between the two pointers
-	let mid = Math.round((left + right) / 2);
+	let mid: number = Math.round((left + right) / 2);
 	// If the arr[mid] is equal to the target that means that we found our target and
 	// can return the index
 	if (arr[mid] === target) {
@@ -48,17 +31,17 @@ function binarySearchRecursive(arr, target, left, right) {
 }
 
 // Iterative solution
-function binarySearchIterative(arr, target) {
+function binarySearchIterative(arr: number[], target: number): number {
 	// Set pointer defining left bounds of arr
-	let left = 0;
+	let left: number = 0;
 	// Set pointer defining right bounds of arr
-	let right = arr.length - 1;
+	let right: number = arr.length - 1;
 	// While the left pointer is = to or less than right pointer, perform search
 	while (left <= right) {
 		// Find midpoint between the left and right bounds
-		let mid = Math.round((left + right) / 2);
+		let mid: number = Math.round((left + right) / 2);
 		// Find the number at that index
-		let curr = arr[mid];
+		let curr: number = arr[mid];
 		// If that is the target return the index
 		if (curr === target) return mid;
 		// If it is greater than the target that means the right side of the

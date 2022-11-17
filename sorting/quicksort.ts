@@ -1,16 +1,16 @@
-const unsorted = [22, 444, 1, 33, 4, 5, 67, 2, 8, 9, 6, 888];
+import { unsorted } from "../arrays";
 
-const quicksort = (arr) => {
+const quicksort = (arr: number[]): number[] => {
 	//Base case: if our arr is empty, we return it
 	if (arr.length === 0) return [];
 	// Declare smaller and larger array
-	const smaller = [];
-	const larger = [];
+	const smaller: number[] = [];
+	const larger: number[] = [];
 	// Declare a pivot, In this case it will be the first element
-	const pivot = arr[0];
+	const pivot: number = arr[0];
 	// Loop through the array beginning at the second element,
 	// This is becasue our pivot is the first element
-	for (let i = 1; i < arr.length; i++) {
+	for (let i: number = 1; i < arr.length; i++) {
 		// If the number at arr[i] is less than the pivot,
 		// Push it to the smaller array
 		if (arr[i] < pivot) smaller.push(arr[i]);
